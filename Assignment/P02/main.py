@@ -26,13 +26,6 @@ print(df1.head(20))
 df2= pd.read_csv('Assignments/P02/StateCapitals.csv')
 print(df2.head(10))
 print(df2['state'])
-df3 = pd.merge(df1, df2,
-                   on='state',
-                   how='right')
-df3.dropna(subset = ["city"], inplace=True)
-print('output now is :\n', df3)
-df3.drop(['shape','duration','date_time'], axis=1,inplace=True)
-print("Our new dataframe is :n\n", df3)
 
 #bounding box for the united states
 #north
@@ -80,14 +73,11 @@ def df_to_geojson(df3, properties, lat='lat', lon='lon'):
 
     for _, row in df3.iterrows():
         
-        # setting the colors to random for rgb color schematic
-        # each color is chosing a random integer between 0 and 255
+        # random rgb color between 0 and 255
         Red = lambda: rand.randint(0,255)
         Green = lambda: rand.randint(0,255)
         Blue = lambda: rand.randint(0,255)
-        # return the formatted colors in formatted string
         ColorGeneration= f'#%02X%02X%02X' % (Red(),Blue(),Green())
-        # create a feature template to fill in
         featured = {'type':'Feature',
                    "properties":
                    {
