@@ -20,7 +20,7 @@ import numpy as np
 import math
 
 # first read and print out ufo sighting 
-df1 = pd.read_csv('Assignments/P02/UFOSightings.csv')
+df1 = pd.read_csv('Assignments/P02/ufo_data.csv')
 print(df1.head(20))
 
 df2= pd.read_csv('Assignments/P02/StateCapitals.csv')
