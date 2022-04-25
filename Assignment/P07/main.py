@@ -43,18 +43,14 @@ def PointQuery():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit(0)  
-
+                
         RadiusOfPoints = 7
-
         for point in ListOfPoints:
             if Rectangle.collidepoint(point):
                 print(point)
                 point_color = pygame.Color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
                 pygame.draw.circle(WindowScreen, point_color, point, RadiusOfPoints,0)
-
-               
-            else:
-               
+            else: 
                 pygame.draw.circle(WindowScreen, pygame.Color('gray'), point, RadiusOfPoints, 0)   
        
         Rectangle.move_ip(2,0)
